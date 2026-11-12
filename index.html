@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales & Revenue Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f1f5f9;
+            margin: 30px;
+        }
+        h1 { color: #1e3a8a; }
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            flex: 1;
+            min-width: 160px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+        .card h2 { color: #2563eb; }
+        .chart {
+            background: white;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sales & Revenue Analysis Dashboard</h1>
+<p>Business Performance Overview</p>
+
+<div class="cards">
+    <div class="card">
+        <h3>Total Revenue</h3>
+        <h2>₹1,75,000</h2>
+    </div>
+    <div class="card">
+        <h3>Total Sales</h3>
+        <h2>250</h2>
+    </div>
+    <div class="card">
+        <h3>Total Products</h3>
+        <h2>10</h2>
+    </div>
+    <div class="card">
+        <h3>Total Profit</h3>
+        <h2>₹65,000</h2>
+    </div>
+</div>
+
+<div class="chart">
+    <h3>Monthly Revenue Analysis</h3>
+    <canvas id="salesChart"></canvas>
+</div>
+
+<script>
+new Chart(document.getElementById("salesChart"), {
+    type: "bar",
+    data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [{
+            label: "Revenue",
+            data: [20000, 30000, 25000, 40000, 35000, 25000],
+            backgroundColor: "#4263eb"
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
